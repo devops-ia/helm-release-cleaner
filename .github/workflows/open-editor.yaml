@@ -1,0 +1,12 @@
+name: EditorConfig Checker
+
+on:
+  issues:
+    types: [opened]
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+jobs:
+  editorconfig:
+    uses: devops-ia/.github/.github/workflows/editorconfig.yaml@main
+    secrets: inherit
