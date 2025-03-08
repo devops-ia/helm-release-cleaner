@@ -1,19 +1,19 @@
 {
-  "name": "@devops-ia/helm-release-cleaner",
+  "name": "@devops-ia/release-cleaner",
   "version": "3.0.0",
   "description": "GitHub Action for Helm Release Cleaner",
-  "author": "amartingarcia <adrianmg231189@gmail.com> (https://github.com/devops-ia/helm-release-cleaner)",
-  "homepage": "https://github.com/devops-ia/helm-release-cleaner#readme",
+  "author": "amartingarcia <adrianmg231189@gmail.com> (https://github.com/devops-ia/release-cleaner)",
+  "homepage": "https://github.com/devops-ia/release-cleaner#readme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "helm-release-cleaner",
+    "release-cleaner",
     "action"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/devops-ia/helm-release-cleaner/issues"
+    "url": "https://github.com/devops-ia/release-cleaner/issues"
   },
   "release": {
     "tagFormat": "v${version}",
@@ -29,7 +29,9 @@
       [
         "@semantic-release/git",
         {
-          "assets": ["CHANGELOG.md"]
+          "assets": [
+            "CHANGELOG.md"
+          ]
         }
       ]
     ]
