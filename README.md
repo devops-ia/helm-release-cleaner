@@ -1,6 +1,6 @@
-# helm-release-cleaner
+# release-cleaner
 
-Image used for helm usage with bash scripts
+Docker image with helm binary to use by helm-release-cleaner Helm Chart.
 
 ```bash
 FROM docker.io/alpine:3.12
