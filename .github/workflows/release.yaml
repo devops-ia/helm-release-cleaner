@@ -2,7 +2,7 @@ name: Manage lifecycle Helm Release Cleaner
 
 env:
   USER: devopsiaci
-  REPO: helm-release-cleaner
+  REPO: release-cleaner
 
 on:
   push:
