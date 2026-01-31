@@ -40,4 +40,4 @@ helm install [RELEASE_NAME] oci://ghcr.io/devops-ia/helm-release-cleaner/release
 
 ## release-cleaner chart
 
-Can be found in [release-cleaner chart](charts/release-cleaner).
+Can be found in [release-cleaner chart](https://github.com/devops-ia/helm-release-cleaner/tree/main/charts/release-cleaner).
