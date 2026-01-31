@@ -1,0 +1,56 @@
+# {{ template "chart.name" . }}
+
+{{ template "chart.description" . }}
+
+{{ template "chart.maintainersSection" . }}
+
+## Prerequisites
+
+* Helm 3+
+
+{{ template "chart.requirementsSection" . }}
+
+## Add repository
+
+```console
+helm repo add {{ template "chart.name" . }} https://devops-ia.github.io/helm-{{ template "chart.name" . }}
+helm repo update
+```
+
+## Install Helm chart (repository mode)
+
+```console
+helm install [RELEASE_NAME] {{ template "chart.name" . }}/{{ template "chart.name" . }}
+```
+
+This install all the Kubernetes components associated with the chart and creates the release.
+
+_See [helm install](https://helm.sh/docs/helm/helm_install/) for command documentation._
+
+## Install Helm chart (OCI mode)
+
+Charts are also available in OCI format. The list of available charts can be found [here](https://github.com/devops-ia/helm-{{ template "chart.name" . }}/pkgs/container/helm-{{ template "chart.name" . }}%2F{{ template "chart.name" . }}).
+
+```console
+helm install [RELEASE_NAME] oci://ghcr.io/devops-ia/helm-{{ template "chart.name" . }}/{{ template "chart.name" . }} --version=[version]
+```
+
+## Uninstall Helm chart
+
+```console
+helm uninstall [RELEASE_NAME]
+```
+
+This removes all the Kubernetes components associated with the chart and deletes the release.
+
+_See [helm uninstall](https://helm.sh/docs/helm/helm_uninstall/) for command documentation._
+
+## Configuration
+
+See [Customizing the chart before installing](https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing). To see all configurable options with comments:
+
+```console
+helm show values {{ template "chart.name" . }}/{{ template "chart.name" . }}
+```
+
+{{ template "chart.valuesSection" . }}

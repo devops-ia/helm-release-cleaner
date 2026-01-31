@@ -1,0 +1,22 @@
+apiVersion: v2
+name: release-cleaner
+description: A Helm chart to clean up Helm releases installed in declared namespaces
+type: application
+maintainers:
+  - name: amartingarcia
+    email: adrianmg231189@gmail.com
+    url: https://github.com/amartingarcia
+  - name: ialejandro
+    email: hello@ialejandro.rocks
+    url: https://ialejandro.rocks
+sources:
+  - https://github.com/devops-ia/helm-release-cleaner
+version: 1.0.0
+appVersion: 1.0.0
+home: https://github.com/devops-ia/helm-release-cleaner
+keywords:
+  - release-cleaner
+  - helm
+  - kubernetes
+  - cleanup
+  - cronjob

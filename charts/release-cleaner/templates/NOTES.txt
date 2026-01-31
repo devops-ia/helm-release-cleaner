@@ -1,0 +1,48 @@
+**********************************************************************
+***   Release Cleaner has been deployed successfully!              ***
+**********************************************************************
+
+Chart version: {{ .Chart.Version }}
+App version:   {{ .Chart.AppVersion }}
+Namespace:     {{ .Release.Namespace }}
+Release name:  {{ .Release.Name }}
+
+=======================================================================
+CRONJOB CONFIGURATION
+=======================================================================
+
+Schedule:          {{ .Values.schedule }}
+Namespaces:        {{ .Values.namespacesClean }}
+{{- if .Values.releasesExclude.enabled }}
+Excluded releases:
+{{- range .Values.releasesExclude.releases }}
+  - {{ . }}
+{{- end }}
+{{- else }}
+Excluded releases: none (only this release is protected)
+{{- end }}
+
+=======================================================================
+USEFUL COMMANDS
+=======================================================================
+
+# Check CronJob status:
+kubectl get cronjob --namespace {{ .Release.Namespace }} {{ include "release-cleaner.fullname" . }}
+
+# View recent Job executions:
+kubectl get jobs --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "release-cleaner.name" . }},app.kubernetes.io/instance={{ .Release.Name }}"
+
+# View logs from the latest job:
+kubectl logs --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "release-cleaner.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" --tail=100
+
+# Manually trigger a job:
+kubectl create job --namespace {{ .Release.Namespace }} --from=cronjob/{{ include "release-cleaner.fullname" . }} {{ include "release-cleaner.fullname" . }}-manual-$(date +%s)
+
+=======================================================================
+RESOURCES
+=======================================================================
+
+Source code: {{ .Chart.Home }}
+
+For issues and support, visit:
+https://github.com/devops-ia/helm-release-cleaner/issues
