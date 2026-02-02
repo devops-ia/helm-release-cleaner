@@ -12,7 +12,7 @@ maintainers:
 sources:
   - https://github.com/devops-ia/helm-release-cleaner
 version: 0.0.1 # set with CI/CD
-appVersion: 1.0.0
+appVersion: 4.1.0
 home: https://github.com/devops-ia/helm-release-cleaner
 keywords:
   - release-cleaner
